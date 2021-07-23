@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+}
+html{
+    font-family: 'Staatliches', cursive;
+}
+body{
+    background-color: aliceblue;
+
+}
+.Componentes{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: row;
+    justify-content:center;
+}
+.Componentes *{
+    min-width: 200px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+}
+.ejemplo1{
+    display: flex;
+    justify-content: center;
+}

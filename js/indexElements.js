@@ -1,0 +1,12 @@
+import './components/Contador';
+import './components/HolaMundo';
+import './components/MensajePopUp';
+import './components/carta-presentacion';
+import './components/ControlDinero';
+import './components/botones-importados'
+import './components/LifeCycleExamples';
+import './components/updateCompleteExample';
+import './components/EstilosImportadosBoton';
+import './components/myCounter13Jul';
+import './components/tooltip';
+import './components/comunicacion-padre-hijo'
