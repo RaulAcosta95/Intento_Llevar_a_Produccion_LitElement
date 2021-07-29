@@ -10,7 +10,7 @@ import './components/EstilosImportadosBoton';
 import './components/myCounter13Jul';
 import './components/tooltip';
 import './components/comunicacion-padre-hijo'
-import './components/comunica-componentes-con-ajax1';
-import './components/comunica-componentes-con-ajax2';
+import './components/comunica-componentes-izquierda';
+import './components/comunica-componentes-derecha';
 import './components/realiza-peticion-http-al-servidor';
 import './components/rickNMorty-api';

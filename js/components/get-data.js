@@ -9,7 +9,6 @@ export class GetData extends LitElement{
     }
     constructor(){
         super();
-        console.log('GetDataComponent');
     }
     
     
