@@ -1,0 +1,16 @@
+import './components/Contador';
+import './components/HolaMundo';
+import './components/MensajePopUp';
+import './components/carta-presentacion';
+import './components/ControlDinero';
+import './components/botones-importados'
+import './components/LifeCycleExamples';
+import './components/updateCompleteExample';
+import './components/EstilosImportadosBoton';
+import './components/myCounter13Jul';
+import './components/tooltip';
+import './components/comunicacion-padre-hijo'
+import './components/comunica-componentes-con-ajax1';
+import './components/comunica-componentes-con-ajax2';
+import './components/realiza-peticion-http-al-servidor';
+import './components/rickNMorty-api';
