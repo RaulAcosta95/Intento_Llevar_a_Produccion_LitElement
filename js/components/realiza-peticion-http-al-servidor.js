@@ -24,20 +24,24 @@ export class RealizaPeticionHttpAlServidor extends LitElement{
 
 
     peticionAjax(){
-        this.respuestaAjax = "Ver consola para ver Texto -->"
         console.log('Petición GET AJAX Texto: ');
         let respuesta = "";
         const xhttp = new XMLHttpRequest();
         xhttp.open('GET', 'archivo.txt', true);//True indica que serán peticiones asíncronas
         xhttp.send();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
-                let datos = this.responseText;
-                console.log('Datos: ');
-                console.log(datos);                
-                return datos;
-            }
-        }
+        const miPromesa = new Promise( (resolve,reject)=>{
+            xhttp.onreadystatechange = function(){
+                        if(this.readyState == 4 && this.status == 200){
+                            let datos = this.responseText;
+                            console.log('Datos: ');
+                            console.log(datos);                
+                            resolve (datos);
+                        }
+                    }
+        });
+        miPromesa.then( resolve =>{
+            this.respuestaAjax = resolve;
+        })
     }
 
 
@@ -47,14 +51,18 @@ export class RealizaPeticionHttpAlServidor extends LitElement{
         const xhttp = new XMLHttpRequest();
         xhttp.open('GET', 'catalogo.json', true);
         xhttp.send();
-        xhttp.onreadystatechange = function(){
-            if(this.readyState == 4 && this.status == 200){
-                let datos = JSON.parse(this.responseText);
-                console.log('Datos: ');
-                console.log(datos);
-                return datos;
+        const miPromesa = new Promise( (resolve,reject)=>{
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    let datos = JSON.parse(this.responseText);
+                    resolve (datos);
+                }
             }
-        }
+        });
+        miPromesa.then( resolve => {
+            console.log('Datos: ');
+            console.log(resolve);
+        })
     }
 }
 customElements.define('realiza-peticion-http-al-servidor',RealizaPeticionHttpAlServidor);

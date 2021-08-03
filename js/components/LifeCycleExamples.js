@@ -18,10 +18,29 @@ export class LifeCycleExamples extends LitElement {
         this.mensaje = '';
         this.mensaje2 = '';
     }
-    connectedCallback(){
+
+
+
+
+    connectedCallback( funcion){
         super.connectedCallback();
+        //Ejecuta cuando se conecte el componente
         console.log('Life Cycle Example: Connected Callback Example');
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     disconnectedCallback(){
         super.disconnectedCallback();
         console.log('Life Cycle Example: Disconnected Callback Example');
