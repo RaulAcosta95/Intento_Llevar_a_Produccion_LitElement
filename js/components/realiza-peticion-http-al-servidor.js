@@ -1,5 +1,7 @@
 import { LitElement,html } from "lit-element";
 export class RealizaPeticionHttpAlServidor extends LitElement{
+
+
     static get properties(){
         return {
             respuestaAjax: {type: String}
@@ -7,8 +9,10 @@ export class RealizaPeticionHttpAlServidor extends LitElement{
     }
     constructor(){
         super();
-        this.respuestaAjax = "";
+        this.respuestaAjax = "hola";
     }
+
+
     render(){
         return html `
             <link rel="stylesheet" href="./css/components/contenedorComponent.css">
@@ -24,25 +28,36 @@ export class RealizaPeticionHttpAlServidor extends LitElement{
 
 
     peticionAjax(){
-        console.log('Petición GET AJAX Texto: ');
-        let respuesta = "";
+        // console.log('Petición GET AJAX Texto: ');
         const xhttp = new XMLHttpRequest();
         xhttp.open('GET', 'archivo.txt', true);//True indica que serán peticiones asíncronas
         xhttp.send();
-        const miPromesa = new Promise( (resolve,reject)=>{
+
+        const miPromesa = new Promise( (resolve,reject) => {
             xhttp.onreadystatechange = function(){
                         if(this.readyState == 4 && this.status == 200){
-                            let datos = this.responseText;
-                            console.log('Datos: ');
-                            console.log(datos);                
-                            resolve (datos);
+                            resolve (this.responseText);
+                        }
+                        else if(this.readyState == 4 && this.status == 404){
+                            reject ('No esta ok la petición');
                         }
                     }
         });
+
         miPromesa.then( resolve =>{
             this.respuestaAjax = resolve;
         })
+        .catch (reject => {
+            console.log('Uy un error: '+reject);
+        })
+        // miPromesa.then( valor => 
+        //     console.log(valor)
+        // , error=>console.log(error));
     }
+
+
+
+
 
 
     peticionAjaxJSON(){

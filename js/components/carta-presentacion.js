@@ -1,14 +1,15 @@
 import { LitElement,html } from 'lit-element';
 
 export class CartaPresentacion extends LitElement {
+
     static get properties(){
         return{
-            nombre: {type: String},
             especialidad: {type: String},
+            nombre: {type: String},
             numero: {type: Number},
-
         }
     }
+
     constructor(){
         super();
         this.nombre = ''
@@ -59,11 +60,11 @@ export class CartaPresentacion extends LitElement {
             <h4>Carta de presentacion</h4>
             <div class="Inputs">
                 <label for="">Especialidad</label>
-                <input type="text" vaule="${this.especialidad}" @change="${this.cambiarEspecialidad}" placeholder="Tu Nombre">
+                <input type="text" vaule="${this.especialidad}" @change="${this.cambiarEspecialidad}" placeholder="Tu Especialidad">
                 <label for="">Nombre</label>
                 <input type="text" vaule="${this.nombre}" @change="${this.cambiarNombre}" placeholder="Tu Nombre">
                 <label for="">Número</label>
-                <input type="text" vaule="${this.numero}" @change="${this.cambiarNumero}" placeholder="Tu Nombre">
+                <input type="text" vaule="${this.numero}" @change="${this.cambiarNumero}" placeholder="Tu Número">
             </div>
             <div class="Carta">
                     <p class="especialidad">${this.especialidad}</p>
@@ -71,17 +72,21 @@ export class CartaPresentacion extends LitElement {
                     <p class="numero">${this.numero}</p>
             </div>
         </div>
-        
         `
     }
+    cambiarEspecialidad(dato){
+        this.especialidad = dato.target.value;
+        console.log(this.especialidad);
+    }
+
+
+
+
+    
     cambiarNombre(e){
         this.nombre=e.target.value;
         console.log(this.nombre);
         console.log(e.bubbles);
-    }
-    cambiarEspecialidad(e){
-        this.especialidad=e.target.value;
-        console.log(this.especialidad);
     }
     cambiarNumero(e){
         this.numero=e.target.value;
