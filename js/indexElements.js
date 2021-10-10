@@ -14,3 +14,4 @@ import './components/comunica-componentes-izquierda';
 import './components/comunica-componentes-derecha';
 import './components/realiza-peticion-http-al-servidor';
 import './components/rickNMorty-api';
+import './components/connected-callback';

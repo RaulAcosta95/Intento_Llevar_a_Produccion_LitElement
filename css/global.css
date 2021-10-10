@@ -34,7 +34,7 @@ button{
     border: white 5px outset;
     height: 60px;
 }
-button:hover{
+button:active{
     border: white 2px outset;
 }
 .botones-desaparecer{
